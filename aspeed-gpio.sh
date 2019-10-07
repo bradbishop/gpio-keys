@@ -35,5 +35,6 @@ if [ -z "$1" ] || [ -z "$2" ]; then
 	exit 1
 fi
 
-eval port=\$$1
+eval port=\$`echo $1 | tr '[a-z]' '[A-Z]'`
+
 echo $((port*8 + $2))
